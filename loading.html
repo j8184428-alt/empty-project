@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>أمازون مصر</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            height: 100%;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background-color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            min-height: 100dvh;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .loading-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            flex: 1;
+            width: 100%;
+            padding: 20px;
+        }
+
+        .logo {
+            width: min(70vw, 250px);
+            max-width: 250px;
+            height: auto;
+            margin-bottom: 40px;
+            display: block;
+        }
+
+        .progress-bar-container {
+            width: min(80vw, 320px);
+            max-width: 320px;
+            height: 6px;
+            background-color: #f0f0f0;
+            border-radius: 3px;
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+
+        .progress-bar {
+            height: 100%;
+            width: 0%;
+            background-color: #FCD200;
+            border-radius: 3px;
+            animation: loading 2s ease-in-out infinite;
+        }
+
+        @keyframes loading {
+            0% { width: 0%; }
+            50% { width: 70%; }
+            100% { width: 100%; }
+        }
+
+        .loading-text {
+            color: #555;
+            font-size: clamp(13px, 3.5vw, 15px);
+        }
+
+        .footer {
+            width: 100%;
+            padding: 16px 12px;
+            text-align: center;
+            border-top: 1px solid #e7e7e7;
+            background-color: #fafafa;
+            flex-shrink: 0;
+        }
+
+        .footer-links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 8px;
+            margin-bottom: 10px;
+        }
+
+        .footer a {
+            color: #0066c0;
+            text-decoration: none;
+            font-size: clamp(11px, 3vw, 12px);
+            white-space: nowrap;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+            color: #c45500;
+        }
+
+        .footer p {
+            color: #555;
+            font-size: clamp(10px, 2.8vw, 12px);
+            line-height: 1.5;
+        }
+
+        /* للشاشات الصغيرة جداً */
+        @media (max-height: 500px) {
+            .logo {
+                width: min(50vw, 180px);
+                margin-bottom: 20px;
+            }
+            .footer {
+                padding: 10px 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="loading-container">
+        <img src="amazon-logo.png.jpg" alt="أمازون مصر" class="logo">
+        <div class="progress-bar-container">
+            <div class="progress-bar"></div>
+        </div>
+        <p class="loading-text">جاري التحميل...</p>
+    </div>
+
+    <div class="footer">
+        <div class="footer-links">
+            <a href="#">شروط الاستخدام</a>
+            <a href="#">سياسة الخصوصية</a>
+            <a href="#">إشعار بملفات تعريف الارتباط</a>
+        </div>
+        <p>© 1996-2026، Amazon.com, Inc. أو شركاتها التابعة</p>
+    </div>
+</body>
+</html>
